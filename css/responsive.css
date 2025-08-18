@@ -1,0 +1,55 @@
+@media screen and (max-width: 992px) {
+    .nav-btns {
+        margin: 0 !important;
+        padding: 0 !important;
+        margin-bottom: 10px !important;
+    }
+
+    .kid-pic {
+        display: none;
+    }
+
+    .hero-section {
+        min-height: 600px;
+    }
+    
+    .about-card { 
+        padding: 45px 20px !important; 
+    }
+
+    .about-btns {
+        margin: 0 !important;
+        display: grid !important;
+        grid-template-columns: repeat(3, 240px);
+    }
+
+    .page-btn { 
+        margin: 10px !important; 
+    }
+
+    .admission-step { 
+        margin: 10px !important; 
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .hero-section { 
+        min-height: 700px; 
+    }
+
+    .hero-content { 
+        text-align: center; 
+    }
+
+    .hero-title { 
+        font-size: 60px; 
+    }
+
+    .page-btn { 
+        margin: 10px 0px !important; 
+    }
+
+    .about-btns { 
+        grid-template-columns: repeat(1, 300px); 
+    }
+}

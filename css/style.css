@@ -1,0 +1,508 @@
+@import url('https://fonts.googleapis.com/css2?family=Handlee&display=swap');
+
+:root {
+    --primary-color: #2c3e50;
+    --secondary-color: #3498db;
+    --accent-color: #e74c3c;
+    --success-color: #27ae60;
+    --warning-color: #f39c12;
+    --light-bg: #ecf0f1;
+    --dark-bg: #34495e;
+    --text-dark: #2c3e50;
+    --text-light: #ffffff;
+    --shadow: 0 10px 30px rgba(0,0,0,0.1);
+    --shadow-hover: 0 15px 40px rgba(0,0,0,0.2);
+    --transition: all 0.3s ease;
+    --border-radius: 15px;
+}
+
+/* Global Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Handlee", cursive;
+    line-height: 1.6;
+    color: var(--text-dark);
+    background-color: var(--light-bg);
+    transition: var(--transition);
+    overflow-x: hidden;
+}
+
+html {
+    scroll-behavior: smooth;
+    cursor: default;
+}
+
+.p-ex-1 {
+    padding: 92px 0;
+}
+
+/* ================= BUTTON STYLES ================= */
+.btn {
+    border-radius: var(--border-radius);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+}
+
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: var(--transition);
+}
+
+.btn:hover::before {
+    left: 100%;
+}
+
+.btn-primary {
+    background: linear-gradient(45deg, var(--secondary-color), var(--primary-color));
+    border: none;
+    box-shadow: var(--shadow);
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-hover);
+}
+
+.login-btn {
+    animation: pulse 2s infinite;
+}
+
+/* ================= NAVIGATION ================= */
+.header {
+    animation: slideInUp 1s ease-out both;
+    background-color: var(--light-bg);
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+}
+
+.navbar {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px);
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    padding: 1rem 0;
+}
+
+.navbar-brand {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: var(--primary-color) !important;
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.navbar-brand:hover {
+    transform: scale(1.05);
+    color: var(--secondary-color) !important;
+}
+
+.brand-text {
+    background: linear-gradient(45deg, var(--secondary-color), var(--accent-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.icons {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    transition: var(--transition);
+}
+
+.nav-link {
+    font-weight: 600;
+    color: var(--text-dark) !important;
+    position: relative;
+    transition: var(--transition);
+    margin: 0 0.5rem;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    width: 0;
+    height: 3px;
+    background: linear-gradient(45deg, var(--secondary-color), var(--accent-color));
+    transition: var(--transition);
+    transform: translateX(-50%);
+    border-radius: 2px;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+.nav-link:hover {
+    color: var(--secondary-color) !important;
+    transform: scale(1.1) !important;
+}
+
+.kid-pic {
+    animation: slideInRight 1s ease-out both;
+}
+
+/* ================= HERO SECTION ================= */
+.hero-section {
+    background: linear-gradient(315deg, var(--secondary-color) -40%, var(--primary-color) 100%);
+    color: var(--text-light);
+    position: relative;
+    overflow: hidden;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(90deg, #84848400, var(--dark-bg), #33333300);
+    animation: shimmer 10s ease-in-out infinite;
+}
+
+.hero-title {
+    font-size: 3.5rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+    animation: slideInLeft 1s ease-out both;
+}
+
+.hero-subtitle {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+    animation: slideInRight 1s ease-out both;
+}
+
+.hero-buttons {
+    animation: slideInDown 1s ease-out both;
+}
+
+/* ================= ABOUT SECTION ================= */
+.about-line::after {
+    content: '';
+    display: block;
+    width: 150px;
+    height: 3px;
+    background: linear-gradient(135deg, var(--dark-bg) 0%, var(--light-bg) 90%);
+    margin: 0.5rem 0;
+}
+
+.about-section {
+    background: var(--light-bg);
+    color: var(--text-dark);
+}
+
+.about-card {
+    padding-top: 7vh;
+    animation: slideInLeft 1s ease-out both;
+}
+
+.card-box {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+    margin-top: 1.5rem;
+    animation: slideInRight 1s ease-out both;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    text-align: center;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+}
+
+.about-btns {
+    animation: fadeIn 2s ease-out both;
+}
+
+.page-btn > div {
+    transform: translateX(10px);
+    transition: var(--transition);
+}
+
+.page-btn > div > i {
+    opacity: 0;
+    transition: var(--transition);
+}
+
+.page-btn:hover > div {
+    transform: translateX(0);
+    padding: 0px 10px;
+}
+
+.page-btn:hover > div > i {
+    opacity: 1;
+}
+
+/* ================= PROGRAM SECTION ================= */
+.section-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    position: relative;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+    text-align: center;
+}
+
+.section-title::after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 75px;
+    height: 3px;
+    background: linear-gradient(45deg, var(--secondary-color), var(--accent-color));
+    border-radius: 2px;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 2.5rem;
+    border-radius: var(--border-radius);
+    text-align: center;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    border: none;
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(52, 152, 219, 0.1), transparent);
+    transition: var(--transition);
+}
+
+.card:hover::before {
+    left: 100%;
+}
+
+.card:hover {
+    transform: translateY(-15px) scale(1.02);
+    box-shadow: var(--shadow-hover);
+}
+
+.program-icon {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(45deg, var(--secondary-color), var(--accent-color));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+    animation: rotateIcon 1s ease-in-out infinite alternate;
+}
+
+.program-icon i {
+    font-size: 2rem;
+    color: var(--text-light);
+}
+
+.program-title { animation: slideInUp 1s ease-out both; }
+.program-card { animation: slideInDown 1s ease-out both; }
+
+/* ================= ADMISSION SECTION ================= */
+.admission-step {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    position: relative;
+    display: flex;
+    margin: 2rem;
+    padding: 1.5rem;
+}
+
+.admission-step:hover {
+    transform: translateX(20px);
+    box-shadow: var(--shadow-hover);
+}
+
+.step-number {
+    color: var(--text-light);
+    font-size: 1.5rem;
+    font-weight: bold;
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(45deg, var(--secondary-color), var(--accent-color));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 1.5rem;
+    animation: pulse 1.5s ease-in-out infinite alternate;
+}
+
+.step-content > p {
+    margin: 0px;
+}
+
+.step-content > h5 {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.admission-title { animation: slideInLeft 1s ease-out both; }
+.admission-card  { animation: slideInRight 1s ease-out both; }
+.admission-btns { animation: fadeIn 1s ease-out both; }
+
+/* ================= CONTACT SECTION ================= */
+.contact-icon { animation: rotateIcon 2s ease-in-out infinite alternate; }
+.contact-title { animation: slideInUp 1s ease-out both; }
+.contact-card { animation: slideInDown 1s ease-out both; }
+
+/* ================= FOOTER ================= */
+footer {
+    background: var(--primary-color) !important;
+    color: var(--text-light);
+    position: relative;
+    overflow: hidden;
+}
+
+footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, transparent, rgba(255,255,255,0.05), transparent);
+    animation: shimmer 2s ease-in-out infinite;
+}
+
+.social-links a {
+    display: inline-block;
+    font-size: 1.5rem;
+    transition: var(--transition);
+}
+
+.social-links a:hover {
+    color: var(--secondary-color) !important;
+    transform: translateY(-3px) scale(1.2);
+}
+
+/* ================= ANIMATIONS ================= */
+
+@keyframes rotateIcon {
+    0%   { transform: rotate(-10deg); }
+    100% { transform: rotate(10deg); }
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50%      { transform: scale(1.05); }
+}
+
+@keyframes gradientShift {
+    0%   { filter: hue-rotate(0deg); }
+    100% { filter: hue-rotate(30deg); }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50%      { transform: translateY(-20px); }
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(100px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(-100px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInDown {
+    from {
+        opacity: 0;
+        transform: translateY(100px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes shimmer {
+    0%, 100% { transform: translateX(-100%); }
+    50%      { transform: translateX(100%); }
+}
+
+/* ================= ANIMATION DELAYS ================= */
+.about-card                 { animation-delay: 0.5s; }
+.card-box                   { animation-delay: 0.5s; }
+.about-btns                 { animation-delay: 0.9s; }
+.program-title              { animation-delay: 1s; }
+.program-card               { animation-delay: 1s; }
+.admission-title            { animation-delay: 1.2s; }
+.admission-card:nth-child(1) { animation-delay: 1.2s; }
+.admission-card:nth-child(2) { animation-delay: 1.4s; }
+.admission-card:nth-child(3) { animation-delay: 1.6s; }
+.admission-btns             { animation-delay: 1.6s; }
+.contact-title              { animation-delay: 1.8s; }
+.contact-card               { animation-delay: 1.8s; }
+.footer                     { animation: slideInDown 2s ease-out both; animation-delay: 2s; }
